@@ -12,12 +12,11 @@ Use Python 3.11 to match CI:
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-cp README.md content/
 jupyter lite build --contents content --output-dir dist
 python -m http.server 8000 --directory dist
 ```
 
-The first three commands create the environment used by the project. The JupyterLite command performs the production build; the final command serves it at `http://localhost:8000` for browser testing. Remove the copied `content/README.md` after local validation if it is not intended as repository content.
+The first three commands create the environment used by the project. The JupyterLite command performs the production build; the final command serves it at `http://localhost:8000` for browser testing. Note that `content/README.md` is committed repository content (a catalog of the notebooks); do not overwrite it with the repository root `README.md`.
 
 ## Coding Style & Naming Conventions
 
